@@ -89,7 +89,7 @@ The application should not be interpreted as a live government AQI monitoring se
 ## 👥 Team
 
 **TECH TITAN**
-
+-Arjun Bajpai
 - Aman Mishra
 - Dhananjay Mishra
 
