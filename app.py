@@ -4,6 +4,7 @@ import numpy as np
 import joblib
 import matplotlib.pyplot as plt
 
+from datetime import datetime
 from pathlib import Path
 from datetime import timedelta
 
@@ -192,6 +193,12 @@ def get_aqi_advisory(aqi):
 # =========================================================
 
 with st.sidebar:
+        st.divider()
+
+    st.markdown("### 🔄 Data Controls")
+
+    if st.button("📂 Reload Dataset", use_container_width=True):
+        st.rerun()
 
     st.markdown("## 🌍 AeroSense AI")
 
@@ -442,7 +449,16 @@ st.caption(
     "The forecast is generated using the trained model "
     "and the most recent 24 hours of historical observations."
 )
+# Record when the forecast was calculated
+if "forecast_calculated_at" not in st.session_state:
+    st.session_state["forecast_calculated_at"] = datetime.now().astimezone()
 
+st.caption(
+    "🕒 Last Updated: "
+    + st.session_state["forecast_calculated_at"].strftime(
+        "%d %b %Y, %I:%M:%S %p %Z"
+    )
+)
 # =========================================================
 # REFRESH PREDICTION
 # =========================================================
