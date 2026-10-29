@@ -4,7 +4,7 @@ import numpy as np
 import joblib
 import matplotlib.pyplot as plt
 
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 from datetime import timedelta
 
@@ -192,22 +192,14 @@ def get_aqi_advisory(aqi):
 # SIDEBAR
 # =========================================================
 
+
 with st.sidebar:
-        st.divider()
-
-    st.markdown("### 🔄 Data Controls")
-
-    if st.button("📂 Reload Dataset", use_container_width=True):
-        st.rerun()
-
     st.markdown("## 🌍 AeroSense AI")
-
     st.caption("AIR QUALITY INTELLIGENCE")
 
     st.divider()
 
     st.markdown("### 🏆 Project Team")
-
     st.markdown("""
     <div class="team-text">
         <b>TECH TITAN</b><br>
@@ -220,18 +212,21 @@ with st.sidebar:
     st.divider()
 
     st.markdown("### 🎓 Institution")
-
     st.write("Bansal Institute of Engineering & Technology")
-
     st.caption("Lucknow, Uttar Pradesh")
-
     st.write("Academic Session: 2026–2027")
 
     st.divider()
 
     st.caption("Model: Random Forest Regressor")
-
     st.caption("Forecast horizon: One hour")
+
+    st.divider()
+
+    st.markdown("### 🔄 Data Controls")
+
+    if st.button("📂 Reload Dataset", use_container_width=True):
+        st.rerun()
 
 
 # =========================================================
