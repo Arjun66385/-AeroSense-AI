@@ -443,6 +443,14 @@ st.caption(
     "and the most recent 24 hours of historical observations."
 )
 
+# =========================================================
+# REFRESH PREDICTION
+# =========================================================
+
+if st.button("🔄 Refresh Prediction", use_container_width=True):
+    st.cache_resource.clear()
+    st.rerun()
+
 
 # =========================================================
 # KEY PERFORMANCE INDICATORS
